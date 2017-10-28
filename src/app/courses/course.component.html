@@ -1,0 +1,34 @@
+<article class="template animated slideInRight">
+  <div *ngIf="course">
+    <h4>Course details</h4>
+
+    <span>NAME : </span>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input type="text" id="nametext" class="mdl-textfield__input"
+             [(ngModel)]="editCourse.name"/>
+    </div>
+
+    <br/>
+
+    <span>TOPIC : </span>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input placeholder="Angular, ReactJS, VueJS, ..." type="text" id="sidetext" class="mdl-textfield__input"
+             [(ngModel)]="editCourse.topic"/>
+    </div>
+
+    <div>
+      <button class="dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
+      mdl-button--accent" (click)="save()">Save
+      </button>
+      &nbsp;
+      <button class="dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+              (click)="cancel()">Cancel
+      </button>
+      &nbsp;
+      <button class="dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+              (click)="delete()">Delete
+      </button>
+    </div>
+
+  </div>
+</article>
