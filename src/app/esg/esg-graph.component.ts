@@ -1,15 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Options} from 'highcharts';
 
 @Component({
   selector: 'lyxor-esg-graph',
-  templateUrl: 'esg-graph.component.html'
+  templateUrl: './esg-graph.component.html',
 })
+export class EsgGraphComponent {
 
-export class EsgGraphComponent implements OnInit {
+  @Input()
+  options: Options;
+
   constructor() {
-  }
-
-  ngOnInit() {
   }
 
 }

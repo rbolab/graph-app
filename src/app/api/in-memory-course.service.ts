@@ -3,11 +3,12 @@ import {getStatusText, InMemoryDbService, RequestInfo, ResponseOptions, STATUS} 
 
 export class InMemoryCourseService implements InMemoryDbService {
   // uncomment this function to force an error
+
   // protected get(reqInfo: RequestInfo) {
   //   return reqInfo.utils.createResponse$(() => {
   //     const options: ResponseOptions = {
   //       body: {},
-  //       status: STATUS.INTERNAL_SERVER_ERROR
+  //       status: STATUS.UNAUTHORIZED
   //     };
   //     return this.finishOptions(options, reqInfo);
   //   });
@@ -43,7 +44,13 @@ export class InMemoryCourseService implements InMemoryDbService {
       }
     ];
 
-    let panoramaKPIs = [
+    let ratingMementum = [
+      {
+        "Key": "Rating_Distribution",
+        "Partition": "",
+        "PartitionValue": "Not Rated",
+        "Value": 0.05
+      },
       {
         "Key": "Rating_Distribution",
         "Partition": "Rating",
@@ -54,13 +61,13 @@ export class InMemoryCourseService implements InMemoryDbService {
         "Key": "Rating_Distribution",
         "Partition": "Rating",
         "PartitionValue": "BB",
-        "Value": 0.2
+        "Value": 0.15
       },
       {
         "Key": "Rating_Distribution",
         "Partition": "Rating",
         "PartitionValue": "B",
-        "Value": 0.2
+        "Value": 0.05
       },
       {
         "Key": "Rating_Distribution",
@@ -72,7 +79,7 @@ export class InMemoryCourseService implements InMemoryDbService {
         "Key": "Rating_Distribution",
         "Partition": "Rating",
         "PartitionValue": "AA",
-        "Value": 0.1
+        "Value": 0.05
       },
       {
         "Key": "Rating_Distribution",
@@ -82,9 +89,55 @@ export class InMemoryCourseService implements InMemoryDbService {
       }
     ];
 
+    let ratingDistribution = [
+      {
+        "Key": "Rating_Distribution",
+        "Partition": "",
+        "PartitionValue": "Not Rated",
+        "Value": 0.05
+      },
+      {
+        "Key": "Rating_Distribution",
+        "Partition": "Rating",
+        "PartitionValue": "CCC",
+        "Value": 0.3
+      },
+      {
+        "Key": "Rating_Distribution",
+        "Partition": "Rating",
+        "PartitionValue": "BB",
+        "Value": 0.25
+      },
+      {
+        "Key": "Rating_Distribution",
+        "Partition": "Rating",
+        "PartitionValue": "B",
+        "Value": 0.15
+      },
+      {
+        "Key": "Rating_Distribution",
+        "Partition": "Rating",
+        "PartitionValue": "A",
+        "Value": 0.1
+      },
+      {
+        "Key": "Rating_Distribution",
+        "Partition": "Rating",
+        "PartitionValue": "AA",
+        "Value": 0.05
+      },
+      {
+        "Key": "Rating_Distribution",
+        "Partition": "Rating",
+        "PartitionValue": "AAA",
+        "Value": 0.1
+      }
+    ];
+
     return {
       courses,
-      panoramaKPIs
+      ratingDistribution,
+      ratingMementum
     };
   }
 }
